@@ -1,5 +1,5 @@
 import React from 'react';
 
-export function App() {
+export const App: React.FC = () => {
   return null;
-}
+};
