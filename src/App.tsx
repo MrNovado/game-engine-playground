@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import { GameField } from './features';
+import { Menu } from './features/Menu';
 
 const AppContainer = styled.div`
   width: 100%;
@@ -16,7 +17,7 @@ export const App: React.FC = () => {
   return (
     <AppContainer>
       <GameField />
-      <div />
+      <Menu />
     </AppContainer>
   );
 };

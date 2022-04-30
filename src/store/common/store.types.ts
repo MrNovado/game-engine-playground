@@ -12,6 +12,6 @@ export type Entity = {
 };
 
 export type AppStore = {
-  engineUpdateFrequency: number;
+  simulatedTime: number;
   entityList: Record<string, Entity>;
 };

@@ -2,8 +2,10 @@ import React, { useMemo } from 'react';
 import styled from '@emotion/styled';
 
 import { useSelector } from 'react-redux';
-import { AppStore, GAME_FIELD_SIZE } from '../../store/common';
 import { BallEntity } from '../Entity';
+
+import { AppStore } from '../../store/common';
+import { GAME_FIELD_SIZE } from '../../store/appConfig';
 
 const GameFieldContainer = styled.div`
   width: 100%;

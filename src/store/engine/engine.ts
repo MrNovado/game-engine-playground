@@ -1,5 +1,7 @@
 import { delay, put } from 'redux-saga/effects';
-import { AppEvents, ENGINE_UPDATE_TICK } from '../common';
+
+import { AppEvents } from '../common';
+import { ENGINE_UPDATE_TICK } from '../appConfig';
 
 export function* engine(): Generator {
   while (true) {

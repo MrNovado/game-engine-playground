@@ -1,10 +1,12 @@
 import React, { useLayoutEffect, useMemo, useRef } from 'react';
 import styled from '@emotion/styled';
 
-import { ENGINE_UPDATE_TICK, Entity } from '../../store/common';
+import { Entity } from '../../store/common';
+import { ENGINE_UPDATE_TICK } from '../../store/appConfig';
 
 const Ball = styled.div`
   position: absolute;
+  box-sizing: border-box;
   border: 1px solid gray;
   border-radius: 50%;
   transition: transform ${ENGINE_UPDATE_TICK}ms linear;
