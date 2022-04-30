@@ -1,5 +1,8 @@
 export type Entity = {
   id: string;
+  type: 'ball';
+  radius: number;
+  color: string;
   vector: {
     x: number;
     y: number;
