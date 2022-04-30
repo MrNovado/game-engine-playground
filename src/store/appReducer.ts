@@ -12,7 +12,7 @@ export const rootReducer: Reducer<AppStore, AppEvents> = (state = APP_STORE_INIT
 
           const rightBoundary = GAME_FIELD_SIZE - entity.size;
           if (newX >= rightBoundary) {
-            newX = GAME_FIELD_SIZE - (GAME_FIELD_SIZE - newX);
+            newX = rightBoundary - (newX - rightBoundary);
             newVelocity = newVelocity > 0 ? newVelocity * -1 : newVelocity;
           }
 
