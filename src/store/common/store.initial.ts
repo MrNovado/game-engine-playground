@@ -1,5 +1,6 @@
 import { GAME_FIELD_SIZE } from '../appConfig';
 import { AppStore } from './store.types';
+import { getSimulatedTimeFreq } from './utils';
 
 const INTI_ENTITY_SIZE = 20;
 const INTI_ENTITY_NUMB = 20;
@@ -25,5 +26,6 @@ const INIT_ENTITY_LIST = new Array(INTI_ENTITY_NUMB).fill(0).reduce<AppStore['en
 
 export const APP_STORE_INITIAL: AppStore = {
   simulatedTime: 0,
+  simulatedTimeFreq: getSimulatedTimeFreq(INIT_ENTITY_LIST),
   entityList: INIT_ENTITY_LIST,
 };

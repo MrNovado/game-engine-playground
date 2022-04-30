@@ -5,7 +5,7 @@ import { ENGINE_UPDATE_TICK } from '../appConfig';
 
 export function* engine(): Generator {
   while (true) {
-    yield delay(ENGINE_UPDATE_TICK);
     yield put<AppEvents>({ type: '@engine/flow/tick' });
+    yield delay(ENGINE_UPDATE_TICK);
   }
 }

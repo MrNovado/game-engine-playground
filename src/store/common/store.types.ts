@@ -13,5 +13,6 @@ export type Entity = {
 
 export type AppStore = {
   simulatedTime: number;
+  simulatedTimeFreq: number;
   entityList: Record<string, Entity>;
 };

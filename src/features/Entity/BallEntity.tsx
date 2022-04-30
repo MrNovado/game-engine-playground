@@ -7,9 +7,9 @@ import { ENGINE_UPDATE_TICK } from '../../store/appConfig';
 const Ball = styled.div`
   position: absolute;
   box-sizing: border-box;
-  border: 1px solid gray;
+  border: 2px solid gray;
   border-radius: 50%;
-  transition: transform ${ENGINE_UPDATE_TICK}ms linear;
+  /* transition: transform ${ENGINE_UPDATE_TICK}ms linear; */
 `;
 
 export const BallEntity: React.FC<{ entity: Entity }> = ({ entity }) => {
@@ -23,6 +23,14 @@ export const BallEntity: React.FC<{ entity: Entity }> = ({ entity }) => {
         elRef.current.style.height = size;
         elRef.current.style.background = `${entity.color}`;
         elRef.current.style.transform = `translate(${entity.vector.x}px, ${entity.vector.y}px)`;
+
+        elRef.current.style.borderRightColor = 'gray';
+        elRef.current.style.borderLeftColor = 'gray';
+        if (entity.vector.velocity > 0) {
+          elRef.current.style.borderRightColor = 'red';
+        } else {
+          elRef.current.style.borderLeftColor = 'red';
+        }
       }
     },
     [entity],
