@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import styled from '@emotion/styled';
 
 import { useSelector } from 'react-redux';
-import { AppStore } from '../../store/common';
+import { AppStore, GAME_FIELD_SIZE } from '../../store/common';
 import { BallEntity } from '../Entity';
 
 const GameFieldContainer = styled.div`
@@ -18,12 +18,12 @@ const GameFieldContainer = styled.div`
 `;
 
 const Canvas = styled.div`
-  width: 600px;
-  height: 600px;
+  width: ${GAME_FIELD_SIZE}px;
+  height: ${GAME_FIELD_SIZE}px;
 
   position: relative;
 
-  border: 1px solid black;
+  outline: 1px solid black;
   background: #edededd4;
 `;
 

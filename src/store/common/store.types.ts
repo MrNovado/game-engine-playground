@@ -1,7 +1,7 @@
 export type Entity = {
   id: string;
   type: 'ball';
-  radius: number;
+  size: number;
   color: string;
   vector: {
     x: number;
@@ -12,5 +12,6 @@ export type Entity = {
 };
 
 export type AppStore = {
+  engineUpdateFrequency: number;
   entityList: Record<string, Entity>;
 };

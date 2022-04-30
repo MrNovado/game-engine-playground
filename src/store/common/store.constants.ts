@@ -1,34 +1,35 @@
-import { AppStore, Entity } from './store.types';
+import { AppStore } from './store.types';
 
-const INIT_ENTITY_1: Entity = {
-  id: '1',
-  type: 'ball',
-  radius: 5,
-  color: 'white',
-  vector: {
-    x: 100,
-    y: 100,
-    directionAngle: 320,
-    velocity: 5,
-  },
-};
+const INTI_ENTITY_NUMB = 20;
+const INIT_ENTITY_LIST = new Array(INTI_ENTITY_NUMB).fill(0).reduce<AppStore['entityList']>((acc, _, index) => {
+  const index1 = index + 1;
+  const rgbIndex = index1 * 10;
+  return {
+    ...acc,
+    [index1]: {
+      id: `${index1}`,
+      type: 'ball',
+      size: 10,
+      color: `rgb(${rgbIndex}, ${rgbIndex}, ${rgbIndex})`,
+      vector: {
+        x: 25 * index1,
+        y: 25 * index1,
+        directionAngle: 45,
+        velocity: 1 * index1,
+      },
+    },
+  };
+}, {});
 
-const INIT_ENTITY_2: Entity = {
-  id: '2',
-  type: 'ball',
-  radius: 5,
-  color: 'green',
-  vector: {
-    x: 200,
-    y: 200,
-    directionAngle: 45,
-    velocity: 3,
-  },
-};
+export const GAME_FIELD_SIZE = 600;
+
+export const ENGINE_UPDATE_TICK = 16;
 
 export const APP_STORE_INITIAL: AppStore = {
-  entityList: {
-    [INIT_ENTITY_1.id]: INIT_ENTITY_1,
-    [INIT_ENTITY_2.id]: INIT_ENTITY_2,
-  },
+  engineUpdateFrequency: Object.entries(INIT_ENTITY_LIST).reduce((acc, [, entity]) => {
+    const freq = entity.vector.velocity / 1;
+    return freq > acc ? freq : acc;
+  }, 1),
+
+  entityList: INIT_ENTITY_LIST,
 };
