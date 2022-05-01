@@ -40,7 +40,7 @@
     "no-use-before-define": "off",
     "@typescript-eslint/no-use-before-define": "off",
     "no-restricted-syntax": "off",
-    "no-unused-vars": "warn",
+    "no-unused-vars": "off",
     "no-debugger": "warn",
     "import/extensions": [
       "error",
