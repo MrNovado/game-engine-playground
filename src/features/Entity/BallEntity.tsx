@@ -6,6 +6,8 @@ const Ball = styled.div`
   box-sizing: border-box;
   border: 2px solid gray;
   border-radius: 50%;
+  /* assuming 60fps render updates */
+  transition: transform 16ms linear;
 `;
 
 type BallEntityProps = {

@@ -53,6 +53,7 @@ export const GameField: React.FC = () => {
       let prevUpdate = performance.now();
       let nextUpdate = prevUpdate + ENGINE_UPDATE_TICK;
 
+      let updateCount = 0;
       let entityListInfo = entityList;
 
       const update = (subsequentUpdate?: number) => {
@@ -84,6 +85,7 @@ export const GameField: React.FC = () => {
 
           entityRef.style.width = size;
           entityRef.style.height = size;
+          entityRef.style.boxShadow = updateCount > 10 ? 'none' : '0 0 1px 1px silver';
           entityRef.style.background = `${entity.color}`;
           entityRef.style.transform = `translate(${entity.vector.x}px, ${entity.vector.y}px)`;
 
@@ -95,6 +97,8 @@ export const GameField: React.FC = () => {
             entityRef.style.borderLeftColor = 'red';
           }
         });
+
+        updateCount += 1;
       };
 
       // first update

@@ -61,14 +61,19 @@ const TimeInfo = () => {
         <span>su</span>
       </div>
       <div>
+        <span>Model update time:</span>
+        <span>{ENGINE_UPDATE_TICK}</span>
+        <span>ms</span>
+      </div>
+      <div>
         <span>Simulated freq req:</span>
         <span>{freq}</span>
         <span />
       </div>
       <div>
-        <span>Model update time:</span>
-        <span>{ENGINE_UPDATE_TICK}</span>
-        <span>ms</span>
+        <span>Simulated freq act:</span>
+        <span>60 fps / update_delta</span>
+        <span />
       </div>
     </TimeInfoContainer>
   );
